@@ -1,0 +1,5 @@
+.idea
+*.iml
+app/js/*
+app/components/*
+node_modules

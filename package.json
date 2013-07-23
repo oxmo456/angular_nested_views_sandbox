@@ -1,0 +1,10 @@
+{
+    "name": "angular_partial_views",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-connect": "*",
+        "grunt-ngmin": "*",
+        "grunt-contrib-watch": "*"
+    }
+}

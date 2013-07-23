@@ -1,0 +1,16 @@
+{
+    "name": "test_angular_001",
+    "version": "0.0.1",
+    "main": "",
+    "ignore": [
+    ],
+    "dependencies": {
+        "angular-unstable":"*",
+        "angular": "*",
+        "angular-cookies": "*",
+        "angular-unstable": "*",
+        "bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+    },
+    "devDependencies": {
+    }
+}
