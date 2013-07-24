@@ -1,1 +1,1 @@
-angular.module("app", ["ngCookies", "calamar.routing.buildRoutes"]);
+angular.module("app", ["calamar.routing.buildRoutes"]);
