@@ -1,5 +1,5 @@
 {
-    "name": "angular_partial_views",
+    "name": "angular_nested_views_sandbox",
     "version": "0.0.1",
     "devDependencies": {
         "grunt": "~0.4.1",
