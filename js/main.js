@@ -6,7 +6,7 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
   'routes',
   function ($routeProvider, $locationProvider, $provide, buildRoutes, routes) {
     buildRoutes(routes, $routeProvider);
-    $routeProvider.otherwise({ redirectTo: '/' });
+    $routeProvider.otherwise({ redirectTo: '/angular_nested_views_sandbox/' });
     $locationProvider.html5Mode(true).hashPrefix('!');
   }
 ]);angular.module('app').run([
@@ -95,7 +95,7 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
     process(routingData, {}, '');
   };
 }());angular.module('app').constant('routes', {
-  path: '/',
+  path: '/angular_nested_views_sandbox/',
   parameters: {
     controller: 'Main',
     meta: {},
