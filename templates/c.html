@@ -1,0 +1,18 @@
+<div ng-controller="MainBis">
+    <h1>C
+        <small>{{helloWorld}}</small>
+    </h1>
+    <hr>
+    <div class="row">
+        <div class="span6 animation-container">
+            <small>sub view A</small>
+            <div ng-include="meta.subViewA" ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></div>
+        </div>
+        <div class="span6 animation-container">
+            <small>sub view B</small>
+            <div ng-include="meta.subViewB" ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></div>
+        </div>
+
+    </div>
+
+</div>

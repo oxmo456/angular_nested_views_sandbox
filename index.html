@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test_angular_001</title>
+    <link rel="stylesheet" href="components/bootstrap/css/bootstrap.css"/>
+    <style type="text/css">
+        .view-enter, .view-leave {
+            -webkit-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+            -moz-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+            -o-transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+            transition: opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        }
+
+        .view-enter {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        .view-enter.view-enter-active {
+            opacity: 1;
+        }
+
+        .view-leave {
+            opacity: 1;
+            position: absolute;
+            width: 100%;
+        }
+
+        .view-leave.view-leave-active {
+            opacity: 0;
+        }
+
+        .animation-container {
+            position: relative;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body ng-app="app" meta-provider>
+
+<div class="container">
+    <h1>Partial views test/demo.</h1>
+    <small>Test 2 routes with same `templateURL`.</small>
+    <a href="/a1">A1</a>
+    <a href="/a2">A2</a>
+    <br>
+    <small>Test `ng-include`.</small>
+    <a href="/b1">B1</a>
+    <a href="/b2">B2</a>
+    <br>
+    <small>Test `ng-include` with children.</small>
+    <a href="/b3/a">B3/A</a>
+    <a href="/b3/b">B3/B</a>
+    <a href="/b3/c">B3/C</a>
+    <br>
+    <hr>
+    <div class="animation-container">
+        <small>ng-view (update on each route change)</small>
+        <div ng-view ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></div>
+    </div>
+    <hr>
+    <div class="animation-container">
+        <small>ng-include (no update if source is the same)</small>
+        <div ng-include="meta.mainView" ng-animate="{enter: 'view-enter', leave: 'view-leave'}"></div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="components/angular-unstable/angular.js"></script>
+<script type="text/javascript" src="components/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
