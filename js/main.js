@@ -7,7 +7,7 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
   function ($routeProvider, $locationProvider, $provide, buildRoutes, routes) {
     buildRoutes(routes, $routeProvider);
     $routeProvider.otherwise({ redirectTo: '/angular_nested_views_sandbox/' });
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(false).hashPrefix('!');
   }
 ]);angular.module('app').run([
   '$route',
@@ -95,11 +95,11 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
     process(routingData, {}, '');
   };
 }());angular.module('app').constant('routes', {
-  path: '/angular_nested_views_sandbox/',
+  path: '/',
   parameters: {
     controller: 'Main',
     meta: {},
-    templateUrl: '/templates/a.html',
+    templateUrl: '/angular_nested_views_sandbox/templates/a.html',
     resolve: { 'helloWorld': 'helloWorldResolver' }
   },
   subRoutes: [
@@ -109,26 +109,26 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
       path: '/b1',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/b.html' } }
+      parameters: { meta: { mainView: '/angular_nested_views_sandbox/templates/b.html' } }
     },
     {
       path: '/b2',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/b.html' } }
+      parameters: { meta: { mainView: '/angular_nested_views_sandbox/templates/b.html' } }
     },
     {
       path: '/b3',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/c.html' } },
+      parameters: { meta: { mainView: '/angular_nested_views_sandbox/templates/c.html' } },
       subRoutes: [
         {
           path: '/a',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/a.html',
-              subViewB: '/templates/partials/b.html'
+              subViewA: '/angular_nested_views_sandbox/templates/partials/a.html',
+              subViewB: '/angular_nested_views_sandbox/templates/partials/b.html'
             }
           }
         },
@@ -136,8 +136,8 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
           path: '/b',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/b.html',
-              subViewB: '/templates/partials/c.html'
+              subViewA: '/angular_nested_views_sandbox/templates/partials/b.html',
+              subViewB: '/angular_nested_views_sandbox/templates/partials/c.html'
             }
           }
         },
@@ -145,8 +145,8 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
           path: '/c',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/c.html',
-              subViewB: '/templates/partials/a.html'
+              subViewA: '/angular_nested_views_sandbox/templates/partials/c.html',
+              subViewB: '/angular_nested_views_sandbox/templates/partials/a.html'
             }
           }
         }
