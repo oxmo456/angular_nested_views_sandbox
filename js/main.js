@@ -6,7 +6,7 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
   'routes',
   function ($routeProvider, $locationProvider, $provide, buildRoutes, routes) {
     buildRoutes(routes, $routeProvider);
-    $routeProvider.otherwise({ redirectTo: '/' });
+    $routeProvider.otherwise({ redirectTo: '.' });
     $locationProvider.html5Mode(true).hashPrefix('!');
   }
 ]);angular.module('app').run([
@@ -99,7 +99,7 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
   parameters: {
     controller: 'Main',
     meta: {},
-    templateUrl: '/templates/a.html',
+    templateUrl: 'templates/a.html',
     resolve: { 'helloWorld': 'helloWorldResolver' }
   },
   subRoutes: [
@@ -109,26 +109,26 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
       path: '/b1',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/b.html' } }
+      parameters: { meta: { mainView: 'templates/b.html' } }
     },
     {
       path: '/b2',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/b.html' } }
+      parameters: { meta: { mainView: 'templates/b.html' } }
     },
     {
       path: '/b3',
       controller: null,
       templateUrl: null,
-      parameters: { meta: { mainView: '/templates/c.html' } },
+      parameters: { meta: { mainView: 'templates/c.html' } },
       subRoutes: [
         {
           path: '/a',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/a.html',
-              subViewB: '/templates/partials/b.html'
+              subViewA: 'templates/partials/a.html',
+              subViewB: 'templates/partials/b.html'
             }
           }
         },
@@ -136,8 +136,8 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
           path: '/b',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/b.html',
-              subViewB: '/templates/partials/c.html'
+              subViewA: 'templates/partials/b.html',
+              subViewB: 'templates/partials/c.html'
             }
           }
         },
@@ -145,8 +145,8 @@ angular.module('app', ['calamar.routing.buildRoutes']);angular.module('app').con
           path: '/c',
           parameters: {
             meta: {
-              subViewA: '/templates/partials/c.html',
-              subViewB: '/templates/partials/a.html'
+              subViewA: 'templates/partials/c.html',
+              subViewB: 'templates/partials/a.html'
             }
           }
         }
